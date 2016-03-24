@@ -15,7 +15,7 @@ namespace Scribe\Doctrine\ORM\Model\Test\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Scribe\Doctrine\ORM\Mapping\Entity;
 use Scribe\Wonka\Utility\Reflection\ClassReflectionAnalyser;
-use Scribe\WonkaBundle\Utility\TestCase\WonkaTestCase;
+use Scribe\Wonka\Utility\UnitTest\WonkaTestCase;
 
 /**
  * Class EntityModelTest.

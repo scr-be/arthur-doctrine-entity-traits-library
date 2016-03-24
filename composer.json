@@ -26,10 +26,9 @@
         "scr-be/arthur-doctrine-library" : "~0.5"
     },
     "require-dev" : {
-        "scr-be/arthur-doctrine-behavior-bundle" : "~0.1",
-        "phpunit/phpunit"                        : "~5.0",
-        "codacy/coverage"                        : "~1.0",
-        "satooshi/php-coveralls"                 : "~1.0"
+        "phpunit/phpunit"        : "~5.0",
+        "codacy/coverage"        : "~1.0",
+        "satooshi/php-coveralls" : "~1.0"
     },
     "suggest" : {
         "scr-be/arthur-doctrine-behavior-bundle" : "~0.1",
