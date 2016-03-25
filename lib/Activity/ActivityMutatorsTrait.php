@@ -1,21 +1,21 @@
 <?php
 
 /*
- * This file is part of the arthur-doctrine-entity-traits-library.
+ * This file is part of the `src-run/arthur-doctrine-entity-traits-library` project.
  *
- * (c) Scribe Inc. <scr@src.run>
  * (c) Rob Frawley 2nd <rmf@src.run>
+ * (c) Scribe Inc      <scr@src.run>
  *
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
-namespace Scribe\Doctrine\ORM\Model\Activity;
+namespace SR\Doctrine\ORM\Model\Activity;
 
-use Scribe\Doctrine\ORM\Model\CodeMutatorsTrait;
-use Scribe\Doctrine\ORM\Model\PropertiesMutatorTrait;
-use Scribe\Doctrine\ORM\Model\Type\TypeMutatorsTrait;
-use Scribe\Doctrine\ORM\Model\User\HasUser;
+use SR\Doctrine\ORM\Model\CodeMutatorsTrait;
+use SR\Doctrine\ORM\Model\PropertiesMutatorTrait;
+use SR\Doctrine\ORM\Model\Type\TypeMutatorsTrait;
+use SR\Doctrine\ORM\Model\User\HasUser;
 
 /**
  * Class ActivityMutatorsTrait.

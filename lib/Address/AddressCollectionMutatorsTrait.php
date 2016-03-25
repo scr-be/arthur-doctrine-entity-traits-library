@@ -1,19 +1,19 @@
 <?php
 
 /*
- * This file is part of the arthur-doctrine-entity-traits-library.
+ * This file is part of the `src-run/arthur-doctrine-entity-traits-library` project.
  *
- * (c) Scribe Inc. <scr@src.run>
  * (c) Rob Frawley 2nd <rmf@src.run>
+ * (c) Scribe Inc      <scr@src.run>
  *
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
-namespace Scribe\Doctrine\ORM\Model\Address;
+namespace SR\Doctrine\ORM\Model\Address;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Scribe\Doctrine\ORM\Mapping\Entity;
+use SR\Doctrine\ORM\Mapping\Entity;
 
 /**
  * Class AddressCollectionMutatorsTrait.

@@ -1,21 +1,21 @@
 <?php
 
 /*
- * This file is part of the arthur-doctrine-entity-traits-library.
+ * This file is part of the `src-run/arthur-doctrine-entity-traits-library` project.
  *
- * (c) Scribe Inc. <scr@src.run>
  * (c) Rob Frawley 2nd <rmf@src.run>
+ * (c) Scribe Inc      <scr@src.run>
  *
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
 
-namespace Scribe\Doctrine\ORM\Model\Test\Entity;
+namespace SR\Doctrine\ORM\Model\Test\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Scribe\Doctrine\ORM\Mapping\Entity;
-use Scribe\Wonka\Utility\Reflection\ClassReflectionAnalyser;
-use Scribe\Wonka\Utility\UnitTest\WonkaTestCase;
+use SR\Doctrine\ORM\Mapping\Entity;
+use SR\Wonka\Utility\Reflection\ClassReflectionAnalyser;
+use SR\Wonka\Utility\UnitTest\WonkaTestCase;
 
 /**
  * Class EntityModelTest.
@@ -224,7 +224,7 @@ class EntityModelTest extends WonkaTestCase
 
     private function setEntityBeforeTest($traitName)
     {
-        $mockTrait = $this->getMockForTrait('Scribe\\Doctrine\\ORM\\Model\\'.$traitName.'MutatorsTrait');
+        $mockTrait = $this->getMockForTrait('SR\\Doctrine\\ORM\\Model\\'.$traitName.'MutatorsTrait');
         $this->analyser->setReflectionClassFromClassName($mockTrait);
 
         return $mockTrait;
@@ -899,9 +899,9 @@ class EntityModelTest extends WonkaTestCase
     private function getCrudEntityParametersMocked($traitName)
     {
         return [
-            $this->getMockForAbstractClass('Scribe\\Doctrine\\ORM\\Mapping\\Entity'),
-            $this->getMockForAbstractClass('Scribe\\Doctrine\\ORM\\Mapping\\Entity'),
-            $this->getMockForAbstractClass('Scribe\\Doctrine\\ORM\\Mapping\\Entity'),
+            $this->getMockForAbstractClass('SR\\Doctrine\\ORM\\Mapping\\Entity'),
+            $this->getMockForAbstractClass('SR\\Doctrine\\ORM\\Mapping\\Entity'),
+            $this->getMockForAbstractClass('SR\\Doctrine\\ORM\\Mapping\\Entity'),
         ];
     }
 
