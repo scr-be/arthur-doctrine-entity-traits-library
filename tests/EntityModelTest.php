@@ -15,6 +15,9 @@ namespace SR\Doctrine\ORM\Model\Test\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Ramsey\Uuid\Uuid;
 use SR\Doctrine\ORM\Mapping\Entity;
+use SR\Doctrine\ORM\Model\Date\CreatedOnTrait;
+use SR\Doctrine\ORM\Model\Date\PublishedOnTrait;
+use SR\Doctrine\ORM\Model\Date\UpdatedOnTrait;
 use SR\Doctrine\ORM\Model\Identity\IdMutableTrait;
 use SR\Doctrine\ORM\Model\Identity\UuidMutableTrait;
 use SR\Doctrine\ORM\Model\Number\CountTrait;
@@ -77,6 +80,11 @@ class EntityModelTest extends \PHPUnit_Framework_TestCase
      * @var string
      */
     const VALUES_FOR_UUID = 'values-for-uuid';
+
+    /**
+     * @var string
+     */
+    const VALUES_FOR_DATETIME = 'values-for-datetime';
 
     /**
      * @var ClassIntrospection
@@ -262,6 +270,18 @@ class EntityModelTest extends \PHPUnit_Framework_TestCase
         'Hierarchy\\Parent' => [
             'props' => ['parent'],
             'values' => [self::VALUES_FOR_ENTITY],
+        ],
+        'Date\\UpdatedOn' => [
+            'props' => ['updatedOn'],
+            'values' => [self::VALUES_FOR_DATETIME],
+        ],
+        'Date\\CreatedOn' => [
+            'props' => ['createdOn'],
+            'values' => [self::VALUES_FOR_DATETIME],
+        ],
+        'Date\\PublishedOn' => [
+            'props' => ['publishedOn'],
+            'values' => [self::VALUES_FOR_DATETIME],
         ],
     ];
 
@@ -1058,6 +1078,87 @@ class EntityModelTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @param string $name
+     *
+     * @return \PHPUnit_Framework_MockObject_MockObject|UpdatedOnTrait
+     */
+    private function getDateUpdatedOnTrait($name)
+    {
+        return $this->setEntityBeforeTest($name);
+    }
+
+    public function testDateUpdatedOnTrait()
+    {
+        $trait = 'Date\\UpdatedOn';
+        $entity = $this->getDateUpdatedOnTrait($trait);
+        $this->performRuntime($trait, $entity);
+
+        $dateTime = new \DateTime('April 26 2016 10:20pm -0400');
+        $entity->setUpdatedOn($dateTime);
+        $this->assertSame('Tue, 26 Apr 2016 22:20:00 -0400', $entity->formatUpdatedOn('r'));
+
+        $entity->clearUpdatedOn();
+        $this->expectException('\SR\Doctrine\Exception\OrmException');
+        $entity->formatUpdatedOn('r');
+        
+        $this->clearEntityAfterTest();
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return \PHPUnit_Framework_MockObject_MockObject|CreatedOnTrait
+     */
+    private function getDateCreatedOnTrait($name)
+    {
+        return $this->setEntityBeforeTest($name);
+    }
+
+    public function testDateCreatedOnTrait()
+    {
+        $trait = 'Date\\CreatedOn';
+        $entity = $this->getDateCreatedOnTrait($trait);
+        $this->performRuntime($trait, $entity);
+
+        $dateTime = new \DateTime('April 26 2016 10:20pm -0400');
+        $entity->setCreatedOn($dateTime);
+        $this->assertSame('Tue, 26 Apr 2016 22:20:00 -0400', $entity->formatCreatedOn('r'));
+
+        $entity->clearCreatedOn();
+        $this->expectException('\SR\Doctrine\Exception\OrmException');
+        $entity->formatCreatedOn('r');
+
+        $this->clearEntityAfterTest();
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return \PHPUnit_Framework_MockObject_MockObject|PublishedOnTrait
+     */
+    private function getDatePublishedOnTrait($name)
+    {
+        return $this->setEntityBeforeTest($name);
+    }
+
+    public function testDatePublishedOnTrait()
+    {
+        $trait = 'Date\\PublishedOn';
+        $entity = $this->getDatePublishedOnTrait($trait);
+        $this->performRuntime($trait, $entity);
+
+        $dateTime = new \DateTime('April 26 2016 10:20pm -0400');
+        $entity->setPublishedOn($dateTime);
+        $this->assertSame('Tue, 26 Apr 2016 22:20:00 -0400', $entity->formatPublishedOn('r'));
+
+        $entity->clearPublishedOn();
+        $this->expectException('\SR\Doctrine\Exception\OrmException');
+        $entity->formatPublishedOn('r');
+
+        $this->clearEntityAfterTest();
+    }
+
+    /**
      * @param string                                   $traitName
      * @param \PHPUnit_Framework_MockObject_MockObject $entity
      */
@@ -1167,6 +1268,9 @@ class EntityModelTest extends \PHPUnit_Framework_TestCase
 
             case self::VALUES_FOR_UUID:
                 return [Uuid::uuid1(), Uuid::uuid1(), Uuid::uuid1(), Uuid::uuid1()];
+
+            case self::VALUES_FOR_DATETIME:
+                return [new \DateTime(), new \DateTime('-1 day'), new \DateTime('-2 days'), new \DateTime('-3 days')];
 
             case self::VALUES_FOR_ARRAY:
                 return [['1', '2', '3'], [1, 2, 3], [['a', 1], 0, 4], ['Some random String']];
@@ -1326,12 +1430,13 @@ class EntityModelTest extends \PHPUnit_Framework_TestCase
         for ($i = 0; $i < count($values); $i++) {
             $this->assertFalse($entity->$checker());
             $entity->$setter($values[$i]);
-            $this->assertEquals($values[$i], $entity->$getter(),
-                sprintf(
-                    'Property should have value of "%s".',
-                    (is_array($values[$i]) ? print_r($values[$i], true) : $values[$i])
-                )
-            );
+            $valueIdentity = $values[$i];
+            if (is_array($values[$i])) {
+                $valueIdentity = print_r($values[$i], true);
+            } else if (is_object($values[$i])) {
+                $valueIdentity = get_class($values[$i]).'::'.spl_object_hash($values[$i]);
+            }
+            $this->assertEquals($values[$i], $entity->$getter(), sprintf('Property should have value of "%s".', $valueIdentity));
             $this->assertTrue($entity->$checker());
             $entity->$clearer();
             $this->assertFalse($entity->$checker());
