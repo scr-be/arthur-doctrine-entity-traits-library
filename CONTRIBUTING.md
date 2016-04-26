@@ -6,7 +6,7 @@ Ensure the following requirements are met when contributing pull-requests to thi
 - All files contain a file-level doc-block using the following template
   ```php
   /*
-   * This file is part of the `src-run/arthur-doctrine-entity-traits-library` project.
+   * This file is part of the `src-run/arthur-doctrine-traits-library` project.
    *
    * (c) Rob Frawley 2nd <rmf@src.run>
    * (c) Scribe Inc      <scr@src.run>

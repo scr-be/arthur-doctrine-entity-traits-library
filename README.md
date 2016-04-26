@@ -1,19 +1,19 @@
-# [src-run] arthur-doctrine-entity-traits-library
+# [src-run] arthur-doctrine-traits-library
 
 | Continuous Integration |   Code Quality Review   |    UnitTest Coverage    |
 |:----------------------:|:-----------------------:|:-----------------------:|
-| [![Travis](https://get.src.run/arthur-doctrine-entity-traits-library/travis_shield)](https://get.src.run/arthur-doctrine-entity-traits-library/travis) | [![Codacy](https://get.src.run/arthur-doctrine-entity-traits-library/codacy_shield)](https://get.src.run/arthur-doctrine-entity-traits-library/codacy) | [![Coveralls](https://get.src.run/arthur-doctrine-entity-traits-library/coveralls_shield)](https://get.src.run/arthur-doctrine-entity-traits-library/coveralls) |
+| [![Travis](https://get.src.run/arthur-doctrine-traits-library/travis_shield)](https://get.src.run/arthur-doctrine-traits-library/travis) | [![Codacy](https://get.src.run/arthur-doctrine-traits-library/codacy_shield)](https://get.src.run/arthur-doctrine-traits-library/codacy) | [![Coveralls](https://get.src.run/arthur-doctrine-traits-library/coveralls_shield)](https://get.src.run/arthur-doctrine-traits-library/coveralls) |
 
 ## Overview
 
 [Welcome](https://get.src.run/go/readme_welcome)!
-The `src-run/arthur-doctrine-entity-traits-library` package provides
+The `src-run/arthur-doctrine-traits-library` package provides
 a collections of traits for common entity property requirements.
 
 ### Grouping
 
-This package is part of the [arthur](https://get.src.run/arthur-doctrine-entity-traits-library/group)
-group ([explanation](https://get.src.run/arthur-doctrine-entity-traits-library/group_explanation)),
+This package is part of the [arthur](https://get.src.run/arthur-doctrine-traits-library/group)
+group ([explanation](https://get.src.run/arthur-doctrine-traits-library/group_explanation)),
 comprised of other releases with a concentration in 
 *core doctrine base classes*,
 and related functionality.
@@ -25,7 +25,7 @@ This package represents a single project within a
 under the *SR* namespace, comprised of framework-agnostic libraries,
 and a number of Symfony bundles. These projects are authored and maintained
 by [Rob Frawley 2nd](https://get.src.run/rmf) and 
-[collaborators](https://get.src.run/arthur-doctrine-entity-traits-library/github_collaborators).
+[collaborators](https://get.src.run/arthur-doctrine-traits-library/github_collaborators).
 
 ## Quick Start
 
@@ -37,14 +37,14 @@ your project requirements. For example, to explicitly require this project using
 the CLI, use the following command.
 
 ```bash
-$ composer require src-run/arthur-doctrine-entity-traits-library
+$ composer require src-run/arthur-doctrine-traits-library
 ```
 
 ## Reference
 
 ### API Docs
 
-This package's API-documentation is available at [get.src.run/arthur-doctrine-entity-traits-library/api](https://get.src.run/arthur-doctrine-entity-traits-library/api),
+This package's API-documentation is available at [get.src.run/arthur-doctrine-traits-library/api](https://get.src.run/arthur-doctrine-traits-library/api),
 (as well as linked below via the *Reference* badge found under the *Additional Links*
 header). All API-reference is build against the *master* Git branch and updated
 automatically on each Git push---api-reference for *specific releases* will
@@ -81,8 +81,8 @@ be joined using the following link
 ### Issues
 
 To report issues or request a new feature use
-[GitHub](https://get.src.run/arthur-doctrine-entity-traits-library/github_issues)
-or [GitLab](https://get.src.run/arthur-doctrine-entity-traits-library/gitlab_issues)
+[GitHub](https://get.src.run/arthur-doctrine-traits-library/github_issues)
+or [GitLab](https://get.src.run/arthur-doctrine-traits-library/gitlab_issues)
 to start a discussion. Include as much information as possible to aid in
 a quick resolution. Feel free to "ping" the topic if you don't get a
 response within a few days.
@@ -92,7 +92,7 @@ response within a few days.
 You created additional functionality during the use of this package? Send
 it back upstream! *Don't hesitate to submit a pull request!* Beyond the
 brief requirements outlined in the
-[contibuting guide](https://get.src.run/arthur-doctrine-entity-traits-library/contributing),
+[contibuting guide](https://get.src.run/arthur-doctrine-traits-library/contributing),
 your [imagination](https://get.src.run/go/readme_imagination)
 represents the only limitation.
 
@@ -103,14 +103,14 @@ This project is licensed under the
 [FSF](https://get.src.run/go/fsf)-/[OSI](https://get.src.run/go/osi)-approved
 and [GPL](https://get.src.run/go/gpl)-compatible, permissive free software
 license. Review the
-[LICENSE](https://get.src.run/arthur-doctrine-entity-traits-library/license)
+[LICENSE](https://get.src.run/arthur-doctrine-traits-library/license)
 file distributed with this source code for additional information.
 
 ## Additional Links
 
 |       Purpose | Status        |
 |--------------:|:--------------|
-| *Stable Release*    | [![Packagist](https://get.src.run/arthur-doctrine-entity-traits-library/packagist_shield)](https://get.src.run/arthur-doctrine-entity-traits-library/packagist) |
-| *Dev Release*    | [![Packagist](https://get.src.run/arthur-doctrine-entity-traits-library/packagist_pre_shield)](https://get.src.run/arthur-doctrine-entity-traits-library/packagist) |
-| *License*    | [![License](https://get.src.run/arthur-doctrine-entity-traits-library/license_shield)](https://get.src.run/arthur-doctrine-entity-traits-library/license) |
-| *Reference*  | [![License](https://get.src.run/arthur-doctrine-entity-traits-library/api_shield)](https://get.src.run/arthur-doctrine-entity-traits-library/api) |
+| *Stable Release*    | [![Packagist](https://get.src.run/arthur-doctrine-traits-library/packagist_shield)](https://get.src.run/arthur-doctrine-traits-library/packagist) |
+| *Dev Release*    | [![Packagist](https://get.src.run/arthur-doctrine-traits-library/packagist_pre_shield)](https://get.src.run/arthur-doctrine-traits-library/packagist) |
+| *License*    | [![License](https://get.src.run/arthur-doctrine-traits-library/license_shield)](https://get.src.run/arthur-doctrine-traits-library/license) |
+| *Reference*  | [![License](https://get.src.run/arthur-doctrine-traits-library/api_shield)](https://get.src.run/arthur-doctrine-traits-library/api) |

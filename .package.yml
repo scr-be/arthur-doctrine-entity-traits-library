@@ -11,6 +11,6 @@ php_exts   : ~
 app_prep   : dep-composer
 app_post   : ~
 app_path   : ~
-pkg_name   : arthur-doctrine-entity-traits-library
+pkg_name   : arthur-doctrine-traits-library
 pkg_desc   : "a collections of traits for common entity property requirements."
 pkg_bndl   : false

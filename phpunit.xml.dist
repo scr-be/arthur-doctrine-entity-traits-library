@@ -11,7 +11,7 @@
          syntaxCheck="true"
          bootstrap="./vendor/autoload.php">
     <testsuites>
-        <testsuite name="src-run/arthur-doctrine-entity-traits-library">
+        <testsuite name="src-run/arthur-doctrine-traits-library">
             <directory>./tests/</directory>
         </testsuite>
     </testsuites>
