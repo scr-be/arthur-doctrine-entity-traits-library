@@ -16,7 +16,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Ramsey\Uuid\Uuid;
 use SR\Doctrine\ORM\Mapping\Entity;
 use SR\Doctrine\ORM\Model\Date\CreatedOnTrait;
-use SR\Doctrine\ORM\Model\Date\PublishedOnTrait;
+use SR\Doctrine\ORM\Model\Date\PublishOnTrait;
 use SR\Doctrine\ORM\Model\Date\UpdatedOnTrait;
 use SR\Doctrine\ORM\Model\Identity\IdMutableTrait;
 use SR\Doctrine\ORM\Model\Identity\UuidMutableTrait;
@@ -279,8 +279,8 @@ class EntityModelTest extends \PHPUnit_Framework_TestCase
             'props' => ['createdOn'],
             'values' => [self::VALUES_FOR_DATETIME],
         ],
-        'Date\\PublishedOn' => [
-            'props' => ['publishedOn'],
+        'Date\\PublishOn' => [
+            'props' => ['publishOn'],
             'values' => [self::VALUES_FOR_DATETIME],
         ],
     ];
@@ -1134,27 +1134,41 @@ class EntityModelTest extends \PHPUnit_Framework_TestCase
     /**
      * @param string $name
      *
-     * @return \PHPUnit_Framework_MockObject_MockObject|PublishedOnTrait
+     * @return \PHPUnit_Framework_MockObject_MockObject|PublishOnTrait
      */
-    private function getDatePublishedOnTrait($name)
+    private function getDatePublishOnTrait($name)
     {
         return $this->setEntityBeforeTest($name);
     }
 
-    public function testDatePublishedOnTrait()
+    public function testDatePublishOnTrait()
     {
-        $trait = 'Date\\PublishedOn';
-        $entity = $this->getDatePublishedOnTrait($trait);
+        $trait = 'Date\\PublishOn';
+        $entity = $this->getDatePublishOnTrait($trait);
         $this->performRuntime($trait, $entity);
 
-        $dateTime = new \DateTime('April 26 2016 10:20pm -0400');
-        $entity->setPublishedOn($dateTime);
-        $this->assertSame('Tue, 26 Apr 2016 22:20:00 -0400', $entity->formatPublishedOn('r'));
+        $dateTime = new \DateTime('April 25 2016 10:20pm -0400');
+        $entity->setPublishOn($dateTime);
+        $this->assertSame('Mon, 25 Apr 2016 22:20:00 -0400', $entity->formatPublishOn('r'));
 
-        $entity->clearPublishedOn();
+        $this->assertTrue($entity->isPublished());
+        $entity->setPublishOn(new \DateTime('+1 day'));
+        $this->assertFalse($entity->isPublished());
+
+        $entity->unPublish();
+        $this->assertFalse($entity->isPublished());
+
+        $entity->publish();
+        $this->assertTrue($entity->isPublished());
+
+        $dateTime = new \DateTime('+1 day');
+        $entity->setPublishOn($dateTime);
+        $this->assertFalse($entity->isPublished());
+
+        $entity->clearPublishOn();
         $this->expectException('\SR\Doctrine\Exception\OrmException');
-        $entity->formatPublishedOn('r');
-
+        $entity->formatPublishOn('r');
+        
         $this->clearEntityAfterTest();
     }
 
