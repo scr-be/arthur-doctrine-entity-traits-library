@@ -14,7 +14,6 @@ namespace SR\Doctrine\ORM\Model\Test\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Ramsey\Uuid\Uuid;
-use SR\Doctrine\ORM\Mapping\Entity;
 use SR\Doctrine\ORM\Model\Date\CreatedOnTrait;
 use SR\Doctrine\ORM\Model\Date\PublishOnTrait;
 use SR\Doctrine\ORM\Model\Date\UpdatedOnTrait;
@@ -1403,9 +1402,9 @@ class EntityModelTest extends \PHPUnit_Framework_TestCase
     private function getCrudEntityParametersMocked($traitName)
     {
         return [
-            $this->getMockForAbstractClass('SR\\Doctrine\\ORM\\Mapping\\Entity'),
-            $this->getMockForAbstractClass('SR\\Doctrine\\ORM\\Mapping\\Entity'),
-            $this->getMockForAbstractClass('SR\\Doctrine\\ORM\\Mapping\\Entity'),
+            $this->getMockForAbstractClass('SR\Doctrine\ORM\Mapping\Entity'),
+            $this->getMockForAbstractClass('SR\Doctrine\ORM\Mapping\Entity'),
+            $this->getMockForAbstractClass('SR\Doctrine\ORM\Mapping\Entity'),
         ];
     }
 
