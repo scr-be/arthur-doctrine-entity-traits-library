@@ -2,16 +2,15 @@
     "name"        : "src-run/arthur-doctrine-traits-library",
     "license"     : "MIT",
     "type"        : "library",
-    "homepage"    : "https://get.src.run/arthur-doctrine-traits-library",
-    "description" : "This library contains a collections of traits for common entity property requirements.",
+    "homepage"    : "https://src.run/arthur-doctrine-traits-library",
+    "description" : "a collections of traits for common entity properties",
     "support" : {
         "email"  : "rmf@src.run",
-        "issues" : "https://arthur-doctrine-traits-library.oss.get.src.run/issues",
-        "source" : "https://arthur-doctrine-traits-library.oss.get.src.run/git",
-        "irc"    : "irc://irc.efnet.org/scribe"
+        "issues" : "https://src.run/arthur-doctrine-traits-library/issues",
+        "source" : "https://src.run/arthur-doctrine-traits-library/git"
     },
     "keywords"   : [
-        "arthur-doctrine-traits-library", "doctrine", "utilities", "library", "rmf", "get.src.run", "scribe"
+        "arthur-doctrine-traits-library", "doctrine", "traits", "library", "rmf", "src.run"
     ],
     "authors"    : [
         {
@@ -22,22 +21,20 @@
         }
     ],
     "require" : {
-        "php"                                : "^5.6|^7.0",
-        "src-run/augustus-exception-library" : "^0.5",
-        "ramsey/uuid"                        : "^3.0"
+        "php"                                       : "^5.6||^7.0",
+        "src-run/arthur-doctrine-identity-library"  : "^0.6",
+        "src-run/arthur-doctrine-exception-library" : "^0.6",
+        "ramsey/uuid"                               : "^3.0"
     },
     "require-dev" : {
-        "src-run/augustus-reflection-library" : "^0.5",
-        "src-run/arthur-doctrine-library"     : "^0.5",
+        "src-run/augustus-reflection-library" : "^0.6",
         "doctrine/orm"                        : "^2.5",
         "phpunit/phpunit"                     : "^5.0",
         "codacy/coverage"                     : "^1.0",
-        "satooshi/php-coveralls"              : "^1.0",
-        "symfony/var-dumper"                  : "^2.8|^3.0"
+        "satooshi/php-coveralls"              : "^1.0"
     },
     "suggest" : {
-        "src-run/arthur-doctrine-library" : "^0.5",
-        "doctrine/orm"                    : "^2.5"
+        "doctrine/orm" : "^2.5"
     },
     "autoload" : {
         "psr-4" : {
@@ -56,7 +53,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master" : "0.5-dev"
+            "dev-master" : "0.6-dev"
         }
     }
 }

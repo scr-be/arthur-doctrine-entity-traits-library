@@ -15,7 +15,7 @@ namespace SR\Doctrine\ORM\Model\Date;
 use SR\Doctrine\Exception\OrmException;
 
 /**
- * Class UpdatedOnTrait
+ * Class UpdatedOnTrait.
  */
 trait UpdatedOnTrait
 {

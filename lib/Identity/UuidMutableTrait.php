@@ -16,7 +16,7 @@ use Ramsey\Uuid\Uuid;
 use SR\Doctrine\Exception\OrmException;
 
 /**
- * Class UuidMutableTrait
+ * Class UuidMutableTrait.
  */
 trait UuidMutableTrait
 {

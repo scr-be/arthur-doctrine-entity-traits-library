@@ -15,7 +15,7 @@ namespace SR\Doctrine\ORM\Model\Date;
 use SR\Doctrine\Exception\OrmException;
 
 /**
- * Class PublishOnTrait
+ * Class PublishOnTrait.
  */
 trait PublishOnTrait
 {

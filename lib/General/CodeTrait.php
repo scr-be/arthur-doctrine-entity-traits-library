@@ -13,7 +13,7 @@
 namespace SR\Doctrine\ORM\Model\General;
 
 /**
- * Class CodeTrait
+ * Class CodeTrait.
  */
 trait CodeTrait
 {

@@ -16,7 +16,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use SR\Doctrine\ORM\Mapping\Entity;
 
 /**
- * Class PhoneCollectionInverseSideTrait
+ * Class PhoneCollectionInverseSideTrait.
  */
 trait PhoneCollectionInverseSideTrait
 {
@@ -28,7 +28,7 @@ trait PhoneCollectionInverseSideTrait
     /**
      * @return $this
      */
-    protected function __initializePhoneCollection()
+    protected function initializePhoneCollection()
     {
         $this->phones = new ArrayCollection();
 
@@ -48,7 +48,7 @@ trait PhoneCollectionInverseSideTrait
      */
     public function hasPhoneCollection()
     {
-        return ! $this->phones->isEmpty();
+        return !$this->phones->isEmpty();
     }
 
     /**

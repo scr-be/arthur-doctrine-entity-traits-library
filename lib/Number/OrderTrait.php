@@ -13,7 +13,7 @@
 namespace SR\Doctrine\ORM\Model\Number;
 
 /**
- * Class OrderTrait
+ * Class OrderTrait.
  */
 trait OrderTrait
 {

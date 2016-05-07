@@ -13,7 +13,7 @@
 namespace SR\Doctrine\ORM\Model\Identity;
 
 /**
- * Class UuidTrait
+ * Class UuidTrait.
  */
 trait UuidTrait
 {
@@ -21,7 +21,7 @@ trait UuidTrait
      * @var string
      */
     protected $uuid;
-    
+
     /**
      * @return string|null
      */

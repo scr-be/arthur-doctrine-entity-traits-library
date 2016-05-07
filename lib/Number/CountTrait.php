@@ -13,7 +13,7 @@
 namespace SR\Doctrine\ORM\Model\Number;
 
 /**
- * Class CountTrait
+ * Class CountTrait.
  */
 trait CountTrait
 {

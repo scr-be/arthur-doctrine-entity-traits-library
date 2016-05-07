@@ -256,7 +256,7 @@ class EntityModelTest extends \PHPUnit_Framework_TestCase
                 self::VALUES_FOR_STRING,
                 self::VALUES_FOR_STRING,
                 self::VALUES_FOR_STRING,
-                self::VALUES_FOR_STRING
+                self::VALUES_FOR_STRING,
             ],
         ],
         'Hierarchy\\ParentCollection' => [
@@ -741,7 +741,7 @@ class EntityModelTest extends \PHPUnit_Framework_TestCase
         $entity->clearVersionPatch();
 
         $this->assertSame('x.x.x', $entity->getVersion());
-        
+
         $entity->setVersion(123, 456, 789);
 
         $this->assertSame('123.456.789', $entity->getVersion());
@@ -971,21 +971,21 @@ class EntityModelTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @param string $trait
-     * 
+     *
      * @return \PHPUnit_Framework_MockObject_MockObject|UuidMutableTrait
      */
     public function getIdentityUuidMutableTrait($trait)
     {
         return $this->setEntityBeforeTest($trait);
     }
-    
+
     public function testIdentityUuidMutableTrait()
     {
         $trait = 'Identity\\UuidMutable';
         $entity = $this->getIdentityUuidMutableTrait($trait);
         $this->performRuntime($trait, $entity);
-        
-        foreach(['generateUuid1', 'generateUuid3', 'generateUuid4', 'generateUuid5'] as $method) {
+
+        foreach (['generateUuid1', 'generateUuid3', 'generateUuid4', 'generateUuid5'] as $method) {
             $entity->clearUuid();
             $this->assertFalse($entity->hasUuid());
             if ($method === 'generateUuid1') {
@@ -1001,7 +1001,7 @@ class EntityModelTest extends \PHPUnit_Framework_TestCase
         $uuid = Uuid::uuid1();
         $entity->setUuidFromString($uuid->toString());
         $this->assertTrue($entity->hasUuid());
-        
+
         $this->expectException('SR\Doctrine\Exception\OrmException');
         $entity->setUuidFromString('invalid-uuid');
 
@@ -1100,7 +1100,7 @@ class EntityModelTest extends \PHPUnit_Framework_TestCase
         $entity->clearUpdatedOn();
         $this->expectException('\SR\Doctrine\Exception\OrmException');
         $entity->formatUpdatedOn('r');
-        
+
         $this->clearEntityAfterTest();
     }
 
@@ -1168,7 +1168,7 @@ class EntityModelTest extends \PHPUnit_Framework_TestCase
         $entity->clearPublishOn();
         $this->expectException('\SR\Doctrine\Exception\OrmException');
         $entity->formatPublishOn('r');
-        
+
         $this->clearEntityAfterTest();
     }
 
@@ -1441,13 +1441,13 @@ class EntityModelTest extends \PHPUnit_Framework_TestCase
 
         $this->tryInitializerCall($entity, $initializer);
 
-        for ($i = 0; $i < count($values); $i++) {
+        for ($i = 0; $i < count($values); ++$i) {
             $this->assertFalse($entity->$checker());
             $entity->$setter($values[$i]);
             $valueIdentity = $values[$i];
             if (is_array($values[$i])) {
                 $valueIdentity = print_r($values[$i], true);
-            } else if (is_object($values[$i])) {
+            } elseif (is_object($values[$i])) {
                 $valueIdentity = get_class($values[$i]).'::'.spl_object_hash($values[$i]);
             }
             $this->assertEquals($values[$i], $entity->$getter(), sprintf('Property should have value of "%s".', $valueIdentity));
@@ -1485,11 +1485,10 @@ class EntityModelTest extends \PHPUnit_Framework_TestCase
         try {
             $method = $inspector->getMethod($initializeMethod);
         } catch (InvalidArgumentException $e) {
-            $initializeMethod = '__'.$initializeMethod;
+            $initializeMethod = $initializeMethod;
             $method = $inspector->getMethod($initializeMethod);
         }
 
-        $method->setAccessible(true);
         $method->invoke($entity);
     }
 
@@ -1513,7 +1512,7 @@ class EntityModelTest extends \PHPUnit_Framework_TestCase
             $removeMethod = array_shift($methods);
         }
 
-        for ($i = 0; $i < count($values); $i++) {
+        for ($i = 0; $i < count($values); ++$i) {
             $this->assertFalse($entity->$hasMethod($values[$i]));
             $entity->$addMethod($values[$i]);
             $this->assertTrue($entity->$hasMethod($values[$i]));

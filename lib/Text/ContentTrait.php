@@ -13,7 +13,7 @@
 namespace SR\Doctrine\ORM\Model\Text;
 
 /**
- * Class ContentTrait
+ * Class ContentTrait.
  */
 trait ContentTrait
 {

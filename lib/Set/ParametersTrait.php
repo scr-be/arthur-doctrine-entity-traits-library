@@ -25,7 +25,7 @@ trait ParametersTrait
     /**
      * @return $this
      */
-    protected function __initializeParameters()
+    protected function initializeParameters()
     {
         $this->parameters = [];
 
@@ -65,7 +65,7 @@ trait ParametersTrait
      */
     public function clearParameters()
     {
-        $this->__initializeParameters();
+        $this->initializeParameters();
 
         return $this;
     }

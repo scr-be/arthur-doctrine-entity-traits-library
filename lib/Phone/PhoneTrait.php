@@ -12,13 +12,11 @@
 
 namespace SR\Doctrine\ORM\Model\Phone;
 
-use SR\Doctrine\ORM\Mapping\IdEntity;
-use SR\Doctrine\ORM\Model\Text\NameInterface;
 use SR\Doctrine\ORM\Model\Text\NameTrait;
 use SR\Doctrine\ORM\Model\Type\TypeTrait;
 
 /**
- * Class PhoneTrait
+ * Class PhoneTrait.
  */
 trait PhoneTrait
 {

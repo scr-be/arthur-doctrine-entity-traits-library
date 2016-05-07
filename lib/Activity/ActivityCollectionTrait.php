@@ -16,7 +16,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use SR\Doctrine\ORM\Mapping\Entity;
 
 /**
- * Class ActivityCollectionTrait
+ * Class ActivityCollectionTrait.
  */
 trait ActivityCollectionTrait // implements ActivityCollectionMutatorsInterface
 {
@@ -28,7 +28,7 @@ trait ActivityCollectionTrait // implements ActivityCollectionMutatorsInterface
     /**
      * @return $this
      */
-    protected function __initializeActivityCollection()
+    protected function initializeActivityCollection()
     {
         $this->activities = new ArrayCollection();
 
@@ -60,7 +60,7 @@ trait ActivityCollectionTrait // implements ActivityCollectionMutatorsInterface
      */
     public function hasActivityCollection()
     {
-        return ! $this->activities->isEmpty();
+        return !$this->activities->isEmpty();
     }
 
     /**

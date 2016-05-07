@@ -13,7 +13,7 @@
 namespace SR\Doctrine\ORM\Model\Version;
 
 /**
- * Class VersionStringTrait
+ * Class VersionStringTrait.
  */
 trait VersionStringTrait
 {

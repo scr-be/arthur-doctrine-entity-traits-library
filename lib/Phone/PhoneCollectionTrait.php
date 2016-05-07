@@ -16,7 +16,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use SR\Doctrine\ORM\Mapping\Entity;
 
 /**
- * Class PhoneCollectionTrait
+ * Class PhoneCollectionTrait.
  */
 trait PhoneCollectionTrait
 {
@@ -39,7 +39,7 @@ trait PhoneCollectionTrait
      */
     public function clearPhoneCollection()
     {
-        $this->__initializePhoneCollection();
+        $this->initializePhoneCollection();
 
         return $this;
     }

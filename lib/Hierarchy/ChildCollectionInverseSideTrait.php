@@ -28,7 +28,7 @@ trait ChildCollectionInverseSideTrait
     /**
      * Init trait.
      */
-    protected function __initializeChildCollection()
+    protected function initializeChildCollection()
     {
         $this->children = new ArrayCollection();
     }
@@ -46,7 +46,7 @@ trait ChildCollectionInverseSideTrait
      */
     public function hasChildCollection()
     {
-        return ! $this->children->isEmpty();
+        return !$this->children->isEmpty();
     }
 
     /**

@@ -16,7 +16,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use SR\Doctrine\ORM\Mapping\Entity;
 
 /**
- * Class AddressCollectionInterface
+ * Class AddressCollectionInterface.
  */
 interface AddressCollectionInterface
 {

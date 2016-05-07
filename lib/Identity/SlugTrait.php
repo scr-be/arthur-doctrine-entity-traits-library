@@ -13,7 +13,7 @@
 namespace SR\Doctrine\ORM\Model\Identity;
 
 /**
- * Class SlugTrait
+ * Class SlugTrait.
  */
 trait SlugTrait
 {

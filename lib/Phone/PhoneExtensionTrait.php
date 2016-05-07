@@ -13,7 +13,7 @@
 namespace SR\Doctrine\ORM\Model\Phone;
 
 /**
- * Class PhoneExtensionTrait
+ * Class PhoneExtensionTrait.
  */
 trait PhoneExtensionTrait
 {

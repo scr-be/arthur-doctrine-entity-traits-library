@@ -17,7 +17,7 @@ use SR\Doctrine\ORM\Model\Set\PropertiesTrait;
 use SR\Doctrine\ORM\Model\Type\TypeTrait;
 
 /**
- * Class ActivityTrait
+ * Class ActivityTrait.
  */
 trait ActivityTrait
 {

@@ -39,7 +39,7 @@ trait ParentCollectionTrait
      */
     public function clearParentCollection()
     {
-        $this->__initializeParentCollection();
+        $this->initializeParentCollection();
 
         return $this;
     }

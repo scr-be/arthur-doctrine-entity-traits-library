@@ -17,7 +17,7 @@ use SR\Doctrine\ORM\Model\Text\NameTrait;
 use SR\Doctrine\ORM\Model\Text\DescriptionTrait;
 
 /**
- * Class ActivityTypeMutatorsTrait
+ * Class ActivityTypeMutatorsTrait.
  */
 trait ActivityTypeTrait
 {

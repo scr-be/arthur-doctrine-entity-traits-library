@@ -13,7 +13,7 @@
 namespace SR\Doctrine\ORM\Model\Identity;
 
 /**
- * Class IdMutableTrait
+ * Class IdMutableTrait.
  */
 trait IdMutableTrait
 {
@@ -37,7 +37,7 @@ trait IdMutableTrait
     public function clearId()
     {
         $this->id = null;
-        
+
         return $this;
     }
 }

@@ -13,7 +13,7 @@
 namespace SR\Doctrine\ORM\Model\Group;
 
 /**
- * Class ContextTrait
+ * Class ContextTrait.
  */
 trait ContextTrait
 {

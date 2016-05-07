@@ -13,7 +13,7 @@
 namespace SR\Doctrine\ORM\Model\Group;
 
 /**
- * Class GroupTrait
+ * Class GroupTrait.
  */
 trait GroupTrait
 {

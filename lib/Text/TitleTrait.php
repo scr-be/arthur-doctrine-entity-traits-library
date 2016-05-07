@@ -13,7 +13,7 @@
 namespace SR\Doctrine\ORM\Model\Text;
 
 /**
- * Class TitleTrait
+ * Class TitleTrait.
  */
 trait TitleTrait
 {

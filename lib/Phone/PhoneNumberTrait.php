@@ -12,10 +12,10 @@
 
 namespace SR\Doctrine\ORM\Model\Phone;
 
-use SR\Utility\StringUtil;
+use SR\Utility\StringTransform;
 
 /**
- * Class PhoneNumberTrait
+ * Class PhoneNumberTrait.
  */
 trait PhoneNumberTrait
 {
@@ -31,7 +31,7 @@ trait PhoneNumberTrait
      */
     public function setNumber($number)
     {
-        $this->number = StringUtil::toPhoneNumber($number);
+        $this->number = StringTransform::toPhoneNumber($number);
 
         return $this;
     }
@@ -49,7 +49,7 @@ trait PhoneNumberTrait
      */
     public function getNumberFormatted()
     {
-        return (string) StringUtil::toPhoneNumberFormatted($this->number);
+        return (string) StringTransform::toPhoneNumberFormatted($this->number);
     }
 
     /**

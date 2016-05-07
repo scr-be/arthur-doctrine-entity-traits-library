@@ -92,11 +92,11 @@ trait PersonTrait
      */
     private function normalizedString(...$stringSet)
     {
-        $stringSet = array_filter($stringSet, function($string) {
+        $stringSet = array_filter($stringSet, function ($string) {
             return $string !== null;
         });
 
-        array_walk($stringSet, function(&$v) {
+        array_walk($stringSet, function (&$v) {
             $v = ucfirst($v);
         });
 

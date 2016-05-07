@@ -13,7 +13,7 @@
 namespace SR\Doctrine\ORM\Model\Version;
 
 /**
- * Class VersionSemanticTrait
+ * Class VersionSemanticTrait.
  */
 trait VersionSemanticTrait
 {
@@ -96,8 +96,8 @@ trait VersionSemanticTrait
         $this->versionMajor = null;
 
         return $this;
-    }    
-    
+    }
+
     /**
      * @param int $versionMinor
      *

@@ -25,7 +25,7 @@ trait AliasesTrait
     /**
      * @return $this
      */
-    protected function __initializeAliases()
+    protected function initializeAliases()
     {
         $this->aliases = [];
 

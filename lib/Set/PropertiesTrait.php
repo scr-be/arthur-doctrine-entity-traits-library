@@ -25,7 +25,7 @@ trait PropertiesTrait
     /**
      * @return $this
      */
-    protected function __initializeProperties()
+    protected function initializeProperties()
     {
         $this->properties = [];
 
@@ -65,7 +65,7 @@ trait PropertiesTrait
      */
     public function clearProperties()
     {
-        $this->__initializeProperties();
+        $this->initializeProperties();
 
         return $this;
     }

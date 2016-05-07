@@ -28,7 +28,7 @@ trait AddressCollectionTrait
     /**
      * @return $this
      */
-    protected function __initializeAddressCollection()
+    protected function initializeAddressCollection()
     {
         $this->addresses = new ArrayCollection();
 
@@ -60,7 +60,7 @@ trait AddressCollectionTrait
      */
     public function hasAddressCollection()
     {
-        return ! $this->addresses->isEmpty();
+        return !$this->addresses->isEmpty();
     }
 
     /**
@@ -72,7 +72,7 @@ trait AddressCollectionTrait
 
         return $this;
     }
-    
+
     /**
      * @param Entity $address
      *

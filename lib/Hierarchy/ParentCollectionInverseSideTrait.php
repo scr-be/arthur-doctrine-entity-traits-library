@@ -28,7 +28,7 @@ trait ParentCollectionInverseSideTrait
     /**
      * @return $this
      */
-    protected function __initializeParentCollection()
+    protected function initializeParentCollection()
     {
         $this->parents = new ArrayCollection();
 
@@ -50,7 +50,7 @@ trait ParentCollectionInverseSideTrait
      */
     public function hasParentCollection()
     {
-        return ! $this->parents->isEmpty();
+        return !$this->parents->isEmpty();
     }
 
     /**

@@ -25,7 +25,7 @@ trait UrlsTrait
     /**
      * @return $this
      */
-    protected function __initializeUrls()
+    protected function initializeUrls()
     {
         $this->urls = [];
 
@@ -65,7 +65,7 @@ trait UrlsTrait
      */
     public function clearUrls()
     {
-        $this->__initializeUrls();
+        $this->initializeUrls();
 
         return $this;
     }

@@ -25,7 +25,7 @@ trait CategoriesTrait
     /**
      * @return $this
      */
-    protected function __initializeCategories()
+    protected function initializeCategories()
     {
         $this->categories = [];
 
@@ -65,7 +65,7 @@ trait CategoriesTrait
      */
     public function clearCategories()
     {
-        $this->__initializeCategories();
+        $this->initializeCategories();
 
         return $this;
     }
